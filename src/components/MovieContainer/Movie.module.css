@@ -1,0 +1,134 @@
+.Movie_block{
+    height: 60vh;
+    width: 22vw;
+    margin: 20px 10px;
+    border: darkblue 1px solid;
+    border-radius: 25px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.Movies_block{
+    height: auto;
+    width: 98vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.img_block{
+    height: 32vh;
+    width: 10vw;
+}
+.image_block_poster{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: picture;
+}
+.img_block>div{
+    width: 100%;
+    height: 100%;
+}
+.img_poster{
+    width: 100%;
+    height: 100%;
+    object-fit: fill
+}
+.title{
+    margin-top: 5px;
+    font-family: "Britannic Bold", cursive;
+    font-size: 1.4em;
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.Stars{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: star;
+}
+.Movie_info{
+    height: 85vh;
+    width: 99vw;
+    background-color: blue;
+    display: grid;
+    grid-template-areas:
+    "picture info_block genres_block"
+    "title info_block genres_block"
+    "star popularity button"
+;
+    grid-template-columns: 3fr 2fr 2fr;
+    grid-template-rows: 6fr 1fr 1fr;
+}
+.Movie_info_page{
+    width: 99vw;
+
+}
+.buttons_panel{
+    height: 7vh;
+    width: 98vw;
+    background-color: #a1a1d0;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.button_pagination{
+    height: 5vh;
+    width: 10vw;
+    border-radius: 35px;
+    border: #0376c9 1px solid;
+    background: linear-gradient(to bottom right, #fffb00, #807d18);
+    color: #101010;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 1.6em;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+.page_marker{
+    height: 5vh;
+    width: 4vw;
+    border-radius: 10px;
+    border: #0376c9 1px solid;
+    background: linear-gradient(to bottom right, #fffb00, #807d18);
+    color: #101010;
+    font-family: Roboto, sans-serif;
+    font-size: 1.6em;
+    line-height: 20px;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+}
+.info_block{
+    grid-area: info_block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.4em;
+}
+.popularity{
+    grid-area: popularity;
+}
+.genres_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    color: #fffb00;
+    grid-area: genres_block;
+
+}
+.genres_block>h5{
+    height: 1vh;
+}
