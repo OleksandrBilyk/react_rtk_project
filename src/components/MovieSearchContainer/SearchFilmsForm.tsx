@@ -11,7 +11,7 @@ import {usePageQuery} from "../../hooks/usePageQuery";
 
 const SearchFilmsForm = () => {
     const [search_res,  setSearchRes] = useState<ISearchRes>({results: [], total_pages:0});
-    const {reset, handleSubmit, register} = useForm();
+    const {reset, handleSubmit, register} = useForm<IRequest>();
     const [query, setQuery] = useState<string>(null);
     const {page, next, prev, default_page} = usePageQuery();
     // const [black_theme,] = useAppContext();
@@ -23,8 +23,10 @@ const SearchFilmsForm = () => {
         })
     }, [page, query])
 
-    const find: SubmitHandler<IRequest> = (keyword) => {
-        setQuery(keyword.keyword)
+    const find: SubmitHandler<IRequest> = ({keyword}) => {
+        console.log(keyword)
+
+        setQuery(keyword)
         default_page()
         reset()
     };
