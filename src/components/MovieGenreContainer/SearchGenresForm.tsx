@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {genreService} from "../../services/genreService";
-import {IGenre} from "../../interfaces/movieInterface";
+import {genreService} from "../../services";
+import {IGenre} from "../../interfaces";
 import style from "./MovieGenreList.module.css";
 
 import {GenreBadges} from "../GenreBages";

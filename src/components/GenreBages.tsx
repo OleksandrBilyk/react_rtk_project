@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 // @ts-ignore
 import BtnBadgesReactjs from 'btn-badge-reactjs'
-import {IGenre} from "../interfaces/movieInterface";
+import {IGenre} from "../interfaces";
 import style from "./MovieGenreContainer/MovieGenreList.module.css"
 
 

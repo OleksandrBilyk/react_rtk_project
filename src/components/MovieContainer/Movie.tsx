@@ -3,7 +3,7 @@ import {FC} from "react";
 // @ts-ignore
 import BtnBadgesReactjs from 'btn-badge-reactjs'
 import {StarRating} from '../StarRating';
-import {IMovie_details} from "../../interfaces/movieInterface";
+import {IMovie_details} from "../../interfaces";
 import style from "./Movie.module.css"
 import {PosterPreview} from "../PosterPreview";
 

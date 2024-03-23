@@ -1,4 +1,4 @@
-import {MovieList} from "../components/MovieContainer/MovieList";
+import {MovieList} from "../components";
 
 const MovieListPage = () => {
 

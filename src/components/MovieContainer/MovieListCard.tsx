@@ -1,9 +1,8 @@
 import {FC} from "react";
 import {useNavigate} from "react-router-dom";
-import {ISetState} from "../../types/ISetState";
 
 import {StarRating} from '../StarRating';
-import {IMovie} from "../../interfaces/movieInterface";
+import {IMovie} from "../../interfaces";
 import style from "./Movie.module.css"
 import {PosterPreview} from "../PosterPreview";
 

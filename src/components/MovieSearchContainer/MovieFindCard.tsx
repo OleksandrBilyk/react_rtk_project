@@ -2,10 +2,10 @@ import {FC, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 import {StarRating} from '../StarRating';
-import {IMovie_details, IMoviesFind} from "../../interfaces/movieInterface";
+import {IMovie_details, IMoviesFind} from "../../interfaces";
 import style from "./MovieFindCard.module.css"
 import {PosterPreview} from "../PosterPreview";
-import {movieService} from "../../services/movieService";
+import {movieService} from "../../services";
 
 
 

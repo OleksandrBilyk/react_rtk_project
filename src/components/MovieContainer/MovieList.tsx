@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
 
-import {IMovie} from "../../interfaces/movieInterface";
+import {IMovie} from "../../interfaces";
 
-import {movieService} from "../../services/movieService";
+import {movieService} from "../../services";
 import {MovieListCard} from "./MovieListCard";
 import style from "./Movie.module.css"
-import {usePageQuery} from "../../hooks/usePageQuery";
+import {usePageQuery} from "../../hooks";
 
 
 

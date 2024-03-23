@@ -1,5 +1,5 @@
 
-import {MovieInfo} from "../components/MovieContainer/MovieInfo";
+import {MovieInfo} from "../components";
 
 const MoviePage = () => {
 

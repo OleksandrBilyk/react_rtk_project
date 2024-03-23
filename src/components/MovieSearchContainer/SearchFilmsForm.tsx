@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
 
-import {IRequest, ISearchRes} from "../../interfaces/movieInterface";
-import {movieService} from "../../services/movieService";
+import {IRequest, ISearchRes} from "../../interfaces";
+import {movieService} from "../../services";
 import {MovieFindCard} from "./MovieFindCard";
 import style from "./MovieFindCard.module.css"
-import {usePageQuery} from "../../hooks/usePageQuery";
+import {usePageQuery} from "../../hooks";
 
 
 
@@ -24,8 +24,6 @@ const SearchFilmsForm = () => {
     }, [page, query])
 
     const find: SubmitHandler<IRequest> = ({keyword}) => {
-        console.log(keyword)
-
         setQuery(keyword)
         default_page()
         reset()

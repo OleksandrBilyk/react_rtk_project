@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
 
-import {IMovie} from "../../interfaces/movieInterface";
+import {IMovie} from "../../interfaces";
 
-import {genreService} from "../../services/genreService";
-import {MovieListCard} from "../MovieContainer/MovieListCard";
+import {genreService} from "../../services";
+import {MovieListCard} from "../MovieContainer";
 import style from "./MovieGenreList.module.css"
-import {usePageQuery} from "../../hooks/usePageQuery";
+import {usePageQuery} from "../../hooks";
 import {useParams} from "react-router-dom";
 
 

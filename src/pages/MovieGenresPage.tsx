@@ -1,4 +1,4 @@
-import {SearchGenresForm} from "../components/MovieGenreContainer/SearchGenresForm";
+import {SearchGenresForm} from "../components";
 import {Outlet} from "react-router-dom";
 
 import style from "../components/MovieGenreContainer/MovieGenreList.module.css"

@@ -1,7 +1,7 @@
-import {IRes} from "../types/IResType";
-import {IGenries, IMovies} from "../interfaces/movieInterface";
+import {IRes} from "../types";
+import {IGenries, IMovies} from "../interfaces";
 import {apiService} from "./apiService";
-import {urls} from "../constants/urls";
+import {urls} from "../constants";
 
 const genreService = {
     getAll: (): IRes<IGenries> => apiService.get(urls.genre.base),

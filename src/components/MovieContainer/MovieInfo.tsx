@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 
-import {movieService} from "../../services/movieService";
-import {IMovie_details} from "../../interfaces/movieInterface";
+import {movieService} from "../../services";
+import {IMovie_details} from "../../interfaces";
 import style from "./Movie.module.css"
 import {Movie} from "./Movie";
 
