@@ -2,11 +2,10 @@ import {NavLink} from "react-router-dom";
 
 import style from './Header.module.css';
 import {UserInfo} from "../UserInfo"
+import {DarkTheme} from "../DarkTheme";
 
 
 const Header = () => {
-
-
 
     return (
         <div className={style.Header}>
@@ -15,7 +14,7 @@ const Header = () => {
             <NavLink to={'movie_list'}>Movies</NavLink>
             <NavLink to={'genre'}>Genres</NavLink>
             <NavLink to={'search'}>Search</NavLink>
-
+            <DarkTheme/>
         </div>
     );
 };

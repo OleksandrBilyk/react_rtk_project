@@ -26,7 +26,6 @@ const MovieListCard: FC<IProps> = ({movie}) => {
             <div  className={style.img_block}>
                 <PosterPreview img_url={poster_path}/>
             </div>
-
             <div className={style.title}>{title}</div>
             <StarRating rating={vote_average}/>
         </div>

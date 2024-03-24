@@ -1,2 +1,2 @@
-export * from './ISetState'
+export * from './reduxTypes'
 export * from './IResType'

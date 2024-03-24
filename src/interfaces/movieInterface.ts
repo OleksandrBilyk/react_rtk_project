@@ -34,8 +34,10 @@ export interface IMovie_details {
     vote_count: number
 }
 export interface IMovies {
-    page: number,
-    results: IMovie[]
+    page: string,
+    results: IMovie[],
+    total_pages: number,
+    total_results: number,
 
 }
 export interface IRequest{

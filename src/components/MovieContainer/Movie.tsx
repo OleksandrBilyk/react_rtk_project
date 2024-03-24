@@ -6,9 +6,7 @@ import {StarRating} from '../StarRating';
 import {IMovie_details} from "../../interfaces";
 import style from "./Movie.module.css"
 import {PosterPreview} from "../PosterPreview";
-
-
-
+import {GenresList} from "../MovieGenreContainer";
 
 interface IProps {
     movie_detail: IMovie_details,
@@ -17,10 +15,6 @@ interface IProps {
 
 const Movie: FC<IProps> = ({movie_detail}) => {
     const {original_title, title, overview, popularity, backdrop_path, vote_average,adult, genres} = movie_detail;
-
-
-
-
 
     return (
         <div className={style.Movie_info}>
@@ -48,7 +42,7 @@ const Movie: FC<IProps> = ({movie_detail}) => {
                 <h5>Popularity: {popularity}</h5>
             </div>
             <div className={style.genres_block}>
-                {genres.map(genre=><h5>{genre.name}</h5>)}
+                {genres.map(genre=>  <GenresList key={genre.id} genre={genre}/>)}
             </div>
         </div>
     );

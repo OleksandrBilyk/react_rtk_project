@@ -1,22 +1,21 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {useParams} from "react-router-dom";
 
-import {movieService} from "../../services";
-import {IMovie_details} from "../../interfaces";
 import style from "./Movie.module.css"
 import {Movie} from "./Movie";
+import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
+import {movieActions} from "../../store";
 
 
 const MovieInfo = () => {
 
-    const [movie,  setMovie] = useState<IMovie_details>(null);
     const {id} = useParams()
+    const dispatch = useAppDispatch();
+    const {movie} = useAppSelector(state => state.movies);
 
     useEffect(() => {
-        movieService.getById(+id).then(({data}) => {
-            setMovie(data)
-        })
-    }, [])
+        dispatch(movieActions.getById(id))
+    }, [id])
 
     if (movie)
         return (
