@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice, isFulfilled} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {IMovies, IMovie, IMovie_details} from "../../interfaces";
 import {movieService} from "../../services";
 import {AxiosError} from "axios";

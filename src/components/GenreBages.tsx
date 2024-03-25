@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 import BtnBadgesReactjs from 'btn-badge-reactjs'
 import {IGenre} from "../interfaces";
 import style from "./MovieGenreContainer/MovieGenreList.module.css"
-import {useAppDispatch} from "../hooks/reduxHooks";
+import {useAppDispatch} from "../hooks";
 import {genreActions} from "../store";
 
 

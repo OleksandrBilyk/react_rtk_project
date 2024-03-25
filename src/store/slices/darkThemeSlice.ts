@@ -1,5 +1,5 @@
-import {createSlice, isFulfilled} from "@reduxjs/toolkit";
-import {IMovies, IMovie, IMovie_details} from "../../interfaces";
+import {createSlice} from "@reduxjs/toolkit";
+
 
 
 interface IThemeState {

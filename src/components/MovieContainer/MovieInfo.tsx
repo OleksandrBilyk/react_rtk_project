@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 
 import style from "./Movie.module.css"
 import {Movie} from "./Movie";
-import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../store";
 
 
@@ -15,7 +15,7 @@ const MovieInfo = () => {
 
     useEffect(() => {
         dispatch(movieActions.getById(id))
-    }, [id])
+    }, [dispatch, id])
 
     if (movie)
         return (

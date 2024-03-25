@@ -1,5 +1,5 @@
-import {createAsyncThunk, createSlice, isFulfilled} from "@reduxjs/toolkit";
-import {IMovies, IMovie, IMovie_details, IGenre, IGenries, IRecGenre} from "../../interfaces";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {IMovies, IMovie, IGenre, IGenries, IRecGenre} from "../../interfaces";
 import {genreService} from "../../services";
 import {AxiosError} from "axios";
 
@@ -7,22 +7,14 @@ interface IGenreState {
     genresList: IGenre[],
     page: number,
     movies: IMovie[],
-    // total_pages: number,
-    // total_results: number,
-    // movie: IMovie_details,
     with_genres: number,
-    // Genre_req: IRecGenre
 }
 
 const initialState: IGenreState = {
     genresList: [],
     page: 1,
     movies: [],
-    // total_pages: 0,
-    // total_results: 0,
-    // movie: null,
     with_genres: null,
-    // Genre_req: {with_genres:0, page:1}
 };
 
 const getAll = createAsyncThunk<IGenries>(

@@ -43,13 +43,11 @@ export interface IMovies {
 export interface IRequest{
     keyword: string
 }
-export interface IMoviesFind {
-    id: number,
-    name: string
-}
 export interface ISearchRes{
-    results: IMoviesFind[],
+    results: IMovie[],
     total_pages: number,
+    page: number,
+    total_results: number
 }
 export interface IGenre{
     id: number,
@@ -61,4 +59,8 @@ export interface IRecGenre{
 }
 export interface IGenries{
     genres: IGenre[]
+}
+export interface IRecFindKeyword{
+    query: string,
+    page: number
 }

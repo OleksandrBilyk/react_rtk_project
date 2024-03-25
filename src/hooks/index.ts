@@ -1,2 +1,1 @@
-export * from './useAppLocation'
-export * from './usePageQuery'
+export * from './reduxHooks'

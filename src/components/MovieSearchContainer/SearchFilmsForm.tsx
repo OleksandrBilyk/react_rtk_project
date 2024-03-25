@@ -1,31 +1,25 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
 
-import {IRequest, ISearchRes} from "../../interfaces";
-import {movieService} from "../../services";
-import {MovieFindCard} from "./MovieFindCard";
 import style from "./MovieFindCard.module.css"
-import {usePageQuery} from "../../hooks";
+import {IRequest} from "../../interfaces";
+import {findFilmsActions} from "../../store";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {MovieListCard} from "../MovieContainer";
 
 
 
 const SearchFilmsForm = () => {
-    const [search_res,  setSearchRes] = useState<ISearchRes>({results: [], total_pages:0});
     const {reset, handleSubmit, register} = useForm<IRequest>();
-    const [query, setQuery] = useState<string>(null);
-    const {page, next, prev, default_page} = usePageQuery();
-    // const [black_theme,] = useAppContext();
-
+    const {movies, page, query, total_pages} = useAppSelector(state => state.find_movies);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        movieService.findFilms(query, +page).then(({data}) => {
-            setSearchRes(data)
-        })
-    }, [page, query])
+        dispatch(findFilmsActions.getFindMovie({query, page}))
+    }, [query, page, dispatch])
 
     const find: SubmitHandler<IRequest> = ({keyword}) => {
-        setQuery(keyword)
-        default_page()
+        dispatch(findFilmsActions.find_keyword(keyword))
         reset()
     };
     return (
@@ -35,16 +29,20 @@ const SearchFilmsForm = () => {
                 <button className={style.button_find}>Find</button>
             </form>
             <div className={style.Movies_block}>
-                {search_res.results.map(movie_find => <MovieFindCard key={movie_find.id} movie_find={movie_find} />)}
+                {movies.map(movie_find => <MovieListCard key={movie_find.id} movie={movie_find} />)}
             </div>
-            {search_res.total_pages<=1 ? <div></div> :
+            {total_pages<=1 ? <div></div> :
                 <div className={style.buttons_panel}>
-                    <button className={style.button_pagination} disabled={(+page <=1 )} onClick={prev}>prev</button>
-                    <div className={style.page_marker}>{page}</div>
-                    <button className={style.button_pagination} disabled={(+page >= search_res.total_pages)} onClick={next}>next</button>
-                </div>}
+                    <div className={style.buttons_panel}>
+                        {page <=1 ? <div></div> :
+                            <button className={style.button_pagination} disabled={(page <=1 )} onClick={() => dispatch(findFilmsActions.prevPage())}>prev</button>}
+                        <div className={style.page_marker}>{page}</div>
+                        {page >= total_pages ? <div></div> :
+                            <button className={style.button_pagination} disabled={(page >= total_pages)} onClick={() => dispatch(findFilmsActions.nextPage())} >next</button>}
+                    </div>
+                </div>
+            }
         </div>
-
 
     );
 };

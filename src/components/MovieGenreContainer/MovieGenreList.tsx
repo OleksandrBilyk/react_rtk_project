@@ -1,9 +1,9 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 
 import {MovieListCard} from "../MovieContainer";
 import style from "./MovieGenreList.module.css"
 import {useParams} from "react-router-dom";
-import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genreActions} from "../../store";
 
 

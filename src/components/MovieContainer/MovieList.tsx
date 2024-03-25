@@ -1,9 +1,8 @@
 import {useEffect} from "react";
 
-import {MovieListCard} from "./MovieListCard";
 import style from "./Movie.module.css"
-
-import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
+import {MovieListCard} from "./MovieListCard";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../store";
 
 
@@ -15,7 +14,7 @@ const MovieList = () => {
 
     useEffect(() => {
         dispatch(movieActions.getAll(page))
-    }, [page])
+    }, [dispatch, page])
 
 
     return (

@@ -2,7 +2,7 @@ import {Outlet} from "react-router-dom";
 
 import {Header} from "../components";
 import style from './MainLayout.module.css'
-import {useAppSelector} from "../hooks/reduxHooks";
+import {useAppSelector} from "../hooks";
 
 const MainLayout = () => {
     const {isDarkMode} = useAppSelector(state => state.darkTheme);
