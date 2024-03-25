@@ -5,6 +5,8 @@ import {useNavigate} from "react-router-dom";
 import BtnBadgesReactjs from 'btn-badge-reactjs'
 import {IGenre} from "../interfaces";
 import style from "./MovieGenreContainer/MovieGenreList.module.css"
+import {useAppDispatch} from "../hooks/reduxHooks";
+import {genreActions} from "../store";
 
 
 interface IProps {
@@ -14,15 +16,16 @@ interface IProps {
 
 const GenreBadges: FC<IProps> = ({genre}) => {
     const {id, name} = genre;
+    const dispatch = useAppDispatch();
 
     const navigate = useNavigate();
-    const toMovie = () => {
+    const toGenre = () => {
         navigate(`/genre/${id}`)
-
+        dispatch(genreActions.genreId(id))
     };
 
     return (
-        <div onClick={toMovie} className={style.Genres_badge}>
+        <div onClick={toGenre} className={style.Genres_badge}>
             <BtnBadgesReactjs
                 btnText={`${name}`}
                 badgeText ={`${id}`}
@@ -33,7 +36,6 @@ const GenreBadges: FC<IProps> = ({genre}) => {
                 btnBackground={'#3d15e0'}
                 btnFontSize={1.2}
             />
-
         </div>
     );
 };

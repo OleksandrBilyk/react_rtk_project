@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import {genreService} from "../../services";
-import {IGenre} from "../../interfaces";
+
 import style from "./MovieGenreList.module.css";
 
 import {GenreBadges} from "../GenreBages";
+import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
+import {genreActions} from "../../store";
 
 const SearchGenresForm = () => {
-    const [genresList,  setGenresList] = useState<IGenre[]>([]);
+    const dispatch = useAppDispatch();
+    const {genresList} = useAppSelector(state => state.genres);
 
     useEffect(() => {
-        genreService.getAll().then(({data}) => {
-            setGenresList(data.genres)
-        })
+        dispatch(genreActions.getAll())
     }, [])
+
     return (
         <div className={style.Genres_block}>
             {genresList.map(genre => <GenreBadges key={genre.id} genre={genre}/>)}

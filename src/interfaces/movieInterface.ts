@@ -55,8 +55,9 @@ export interface IGenre{
     id: number,
     name: string
 }
-export interface IGenres{
-    genres: [IGenre]
+export interface IRecGenre{
+    with_genres: number,
+    page: number
 }
 export interface IGenries{
     genres: IGenre[]
