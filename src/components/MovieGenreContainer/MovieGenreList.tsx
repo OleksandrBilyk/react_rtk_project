@@ -1,8 +1,7 @@
 import {useEffect} from "react";
 
-import {MovieListCard} from "../MovieContainer";
 import style from "./MovieGenreList.module.css"
-import {useParams} from "react-router-dom";
+import {MovieListCard} from "../MovieContainer";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genreActions} from "../../store";
 
@@ -11,12 +10,11 @@ import {genreActions} from "../../store";
 
 const MovieGenreList = () => {
     const dispatch = useAppDispatch();
-    const {id} = useParams()
     const {movies, page, with_genres} = useAppSelector(state => state.genres);
 
     useEffect(() => {
         dispatch(genreActions.getGenre({page, with_genres}))
-    }, [id, page])
+    }, [dispatch, page, with_genres])
 
 
     return (
