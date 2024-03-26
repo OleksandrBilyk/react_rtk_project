@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 .Home_page{
-    width: 99vw;
-    height: 89vh;
+    width: 100vw;
+    height: 91vh;
     background-image: url("../../public/Home-Cinema.png");
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -13,4 +14,12 @@
     font-family: "Dancing Script", cursive;
     font-weight: bold;
     font-size: 7em;
+}
+.autorisation{
+    width: 25vw;
+    height: 20vh;
+    background: rgba(205, 214, 219, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,9 +1,9 @@
 .Header {
-    width: 98vw;
+    width: 99vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
+    height: 9vh;
     background-color: #a1a1d0;
     font-size: 25px;
 }

@@ -18,7 +18,7 @@ const MovieList = () => {
 
 
     return (
-        <div>
+        <div className={style.Movies_block}>
             <div className={style.Movies_block}>
                 {movies.map(movie => <MovieListCard key={movie.id} movie={movie} />)}
             </div>

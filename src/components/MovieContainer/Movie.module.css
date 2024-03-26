@@ -1,7 +1,7 @@
 .Movie_block{
     height: 60vh;
     width: 22vw;
-    margin: 20px 10px;
+    margin: 20px 8px;
     border: darkblue 1px solid;
     border-radius: 25px;
     background-color: blue;
@@ -13,8 +13,10 @@
 }
 .Movies_block{
     height: auto;
-    width: 98vw;
+    width: 100vw;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 .img_block{
@@ -55,9 +57,9 @@
     grid-area: star;
 }
 .Movie_info{
-    height: 85vh;
+    min-height: 90vh;
     width: 99vw;
-    background-color: blue;
+    background-color: #3b3bff;
     display: grid;
     grid-template-areas:
     "picture info_block genres_block"
@@ -67,15 +69,31 @@
     grid-template-columns: 3fr 2fr 2fr;
     grid-template-rows: 6fr 1fr 1fr;
 }
-.Movie_info_page{
+.Movie_info_dark{
+    min-height: 90vh;
     width: 99vw;
+    background-color: black;
+    display: grid;
+    color: lightgray;
+    grid-template-areas:
+    "picture info_block genres_block"
+    "title info_block genres_block"
+    "star popularity button"
+;
+    grid-template-columns: 3fr 2fr 2fr;
+    grid-template-rows: 6fr 1fr 1fr;
+}
+.Movie_info_page{
+    width: 100vw;
 
 }
 .buttons_panel{
+     margin: 0;
     height: 7vh;
-    width: 98vw;
+    width: 100vw;
     background-color: #a1a1d0;
     position: fixed;
+    left: -1vw;
     bottom: 0;
     display: flex;
     justify-content: space-evenly;

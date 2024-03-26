@@ -7,6 +7,7 @@ import {IMovie_details} from "../../interfaces";
 import style from "./Movie.module.css"
 import {PosterPreview} from "../PosterPreview";
 import {GenresList} from "../MovieGenreContainer";
+import {useAppSelector} from "../../hooks";
 
 interface IProps {
     movie_detail: IMovie_details,
@@ -15,9 +16,10 @@ interface IProps {
 
 const Movie: FC<IProps> = ({movie_detail}) => {
     const {original_title, title, overview, popularity, backdrop_path, vote_average,adult, genres} = movie_detail;
+    const {isDarkMode} = useAppSelector(state => state.darkTheme);
 
     return (
-        <div className={style.Movie_info}>
+        <div className={isDarkMode ?  style.Movie_info_dark: style.Movie_info}>
             <div className={style.image_block_poster}>
                 <PosterPreview img_url={backdrop_path}/>
             </div>
